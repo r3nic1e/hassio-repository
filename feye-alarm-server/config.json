@@ -1,12 +1,15 @@
 {
   "name": "FalconEye Alarm Server",
-  "version": "v0.1",
+  "version": "v0.1.1",
   "slug": "feye_alarm_server",
   "description": "Alarm Server for FalconEye cameras",
   "arch": ["aarch64"],
   "url": "https://github.com/r3nic1e/hassio-repository",
   "startup": "application",
   "boot": "auto",
+  "ports": {
+    "15002/tcp": 15002
+  },
   "options": {
     "mqtt": {
       "url": null,
