@@ -1,0 +1,31 @@
+{
+  "name": "FalconEye Alarm Server",
+  "version": "v0.1",
+  "slug": "feye_alarm_server",
+  "description": "Alarm Server for FalconEye cameras",
+  "arch": ["aarch64"],
+  "url": "https://github.com/r3nic1e/hassio-repository",
+  "startup": "application",
+  "boot": "auto",
+  "options": {
+    "mqtt": {
+      "url": null,
+      "topic": "feye/{{ .SerialID }}/{{ .Channel }}"
+    },
+    "listen_addr": ":15002",
+    "recover_time": "30s",
+    "debug": false
+  },
+  "schema": {
+    "mqtt": {
+      "url": "str",
+      "username": "str?",
+      "password": "str?",
+      "clientId": "str?",
+      "topic": "str"
+    },
+    "listen_addr": "str",
+    "recover_time": "str",
+    "debug": "bool"
+  }
+}
